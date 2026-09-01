@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ckb" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Game</title>
+    <title>Will You Be My Valentine?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="card">
     <div class="image-box">
-        <img id="panda-img" class="character-img" src="" alt="Panda GIF">
+        <img id="panda-img" class="character-img" src="" alt="Milk and Mocha Bear GIF">
     </div>
     
     <h2 id="question-text"></h2>
@@ -21,14 +21,14 @@
 <script>
     let step = 1;
 
-    // Direct GIF links for Milk & Mocha bears from video
+    // Direct Working Tenor CDN GIF Links for Milk & Mocha
     const gifs = {
-        step1: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p0eDZ3eW1sdXVidjh4YWU1Y3I2bXJldXU4eWhpMnhvNzFndzM4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1dkp25nS5565mMf/giphy.gif",
-        step2: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExczB5NHp3cTY2Ymdyc3h2YmcyZWd2NDUxcGpvZHp1bmtuaWZ3d3I4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L3X9GvKSM50gRW03wx/giphy.gif",
-        step3: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGxibW5vNHBvNm1yOHRsaXN0OHp1cWkxcThyejY3M2c2Y2g1bmQ2YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KztT2c4u8mYYUiMKdJ/giphy.gif",
-        step4: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmNudHJtdHZ0bTN5ZnA4Mmd3bTdrdG5xcHJ5OHdzbjUyc3o2bmdwdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fdGny48RIsS1G/giphy.gif",
-        step5: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnFlOXo5NGIxaTZ5bmd5dTZxNWFyeTRtdzI5NHFxeWhldWRrZXo4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif",
-        step6: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODFjNWY1NzR4OWVxcHExbjV6MHkwdXljbms3bWF1eXZ0Znl5M28xNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/IzXiddo2M48EVGJ2S7/giphy.gif"
+        step1: "https://media.tenor.com/gU21wNavAhMAAAAi/milk-and-mocha-bear.gif",
+        step2: "https://media.tenor.com/zW-3gA--F9sAAAAi/milk-and-mocha.gif",
+        step3: "https://media.tenor.com/b9LIXeUeS0AAAAAi/milk-and-mocha-hug.gif",
+        step4: "https://media.tenor.com/j83uD3S0QYAAAAAi/milk-and-mocha-crying.gif",
+        step5: "https://media.tenor.com/yG16_i0j_B4AAAAi/milk-and-mocha.gif",
+        step6: "https://media.tenor.com/vHq13N2632sAAAAi/milk-and-mocha-bear-kiss.gif"
     };
 
     function renderStep() {
@@ -37,74 +37,74 @@
         const pandaImg = document.getElementById('panda-img');
 
         if (step === 1) {
-            questionText.innerText = "دەبێت ببیت بە خۆشەویستم؟ 🥺❤️";
+            questionText.innerText = "Will you be my girlfriend? 🥺❤️";
             pandaImg.src = gifs.step1;
             actionArea.innerHTML = `
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-no" onclick="nextStep(false)">نەخێر ❌</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-no" onclick="nextStep(false)">No ❌</button>
                 </div>
             `;
         } else if (step === 2) {
-            questionText.innerText = "دڵنیایت؟ خۆ من زۆرم خۆشدەوێیت 🥺";
+            questionText.innerText = "Are you sure? I love you so much! 🥺";
             pandaImg.src = gifs.step2;
             actionArea.innerHTML = `
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
-                <button class="btn-no" style="width: 100%; opacity: 0.7;" onclick="nextStep(false)">دڵنیای؟ 🤨</button>
+                <button class="btn-no" style="width: 100%; opacity: 0.8;" onclick="nextStep(false)">Really sure? 🤨</button>
             `;
         } else if (step === 3) {
-            questionText.innerText = "تکایە... با پێکەوە جوانترین چیرۆک بنووسینەوە 🌸";
+            questionText.innerText = "Please... let's write our beautiful story together 🌸";
             pandaImg.src = gifs.step3;
             actionArea.innerHTML = `
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-no" onclick="nextStep(false)">هێشتا نەخێر؟ 😭</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-no" onclick="nextStep(false)">Still No? 😭</button>
                 </div>
             `;
         } else if (step === 4) {
-            questionText.innerText = "کۆڵ مەدە! هیچ ڕێگەیەکی ترت نەماوە 🙃";
+            questionText.innerText = "Don't give up! You have no other choice 🙃";
             pandaImg.src = gifs.step4;
             actionArea.innerHTML = `
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
-                <button class="btn-surrender" onclick="nextStep(false)">ئۆفففف</button>
+                <button class="btn-surrender" onclick="nextStep(false)">Ufffff</button>
             `;
         } else if (step === 5) {
-            questionText.innerText = "سیستەمەکە هاک کرا! ئێستا تەنها بەڵێ ماوە 😎✨";
+            questionText.innerText = "System Hacked! Only YES is available now 😎✨";
             pandaImg.src = gifs.step5;
             actionArea.innerHTML = `
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
                 <div class="btn-row">
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
-                    <button class="btn-yes" onclick="nextStep(true)">بەڵێ 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
+                    <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
                 </div>
-                <button class="btn-yes" style="width: 100%; background-color: #00b0ff; color: white;" onclick="nextStep(true)">تەسلیم بووم! 😍</button>
+                <button class="btn-yes" style="width: 100%; background: linear-gradient(135deg, #00b0ff 0%, #0081cb 100%);" onclick="nextStep(true)">I Surrender! 😍</button>
             `;
         } else if (step === 6) {
-            questionText.innerText = "یەسسسسس! 🎉";
+            questionText.innerText = "Yessssss! 🎉";
             pandaImg.src = gifs.step6;
             actionArea.innerHTML = `
                 <p class="message-text">
-                    باشترین بڕیاری ژیانت دا! بەڵێن بێت هەرگیز پەشیمان نابیتەوە.<br>
-                    ژینت پڕ دەکەم لە خۆشەویستی و خەندە... خۆشم دەوێیت بەقەد هەموو دنیا! ✨💖😍
+                    You made the best decision ever! I promise to fill your life with love, laughter, and happiness.<br>
+                    I love you more than everything! ✨💖😍
                 </p>
-                <button class="btn-restart" onclick="resetGame()">دووبارە 🔄</button>
+                <button class="btn-restart" onclick="resetGame()">Play Again 🔄</button>
             `;
         }
     }
