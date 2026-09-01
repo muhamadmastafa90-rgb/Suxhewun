@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Will You Be My Girlfriend?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="card">
     <div class="image-box">
-        <img id="panda-img" class="character-img" src="" alt="Milk and Mocha Bear GIF">
+        <img id="panda-img" class="character-img" src="" alt="Panda GIF">
     </div>
     
     <h2 id="question-text"></h2>
@@ -21,14 +21,10 @@
 <script>
     let step = 1;
 
-    // Direct Working Tenor CDN GIF Links for Milk & Mocha
+    // Local GIF paths in your GitHub repository
     const gifs = {
-        step1: "https://media.tenor.com/gU21wNavAhMAAAAi/milk-and-mocha-bear.gif",
-        step2: "https://media.tenor.com/zW-3gA--F9sAAAAi/milk-and-mocha.gif",
-        step3: "https://media.tenor.com/b9LIXeUeS0AAAAAi/milk-and-mocha-hug.gif",
-        step4: "https://media.tenor.com/j83uD3S0QYAAAAAi/milk-and-mocha-crying.gif",
-        step5: "https://media.tenor.com/yG16_i0j_B4AAAAi/milk-and-mocha.gif",
-        step6: "https://media.tenor.com/vHq13N2632sAAAAi/milk-and-mocha-bear-kiss.gif"
+        start: "./d50990398f7e5a506698ca3f6706fdbd.gif",
+        success: "./9ec2a2e85e39cc2c9104de3b5b8a40c6.gif"
     };
 
     function renderStep() {
@@ -36,9 +32,13 @@
         const actionArea = document.getElementById('action-area');
         const pandaImg = document.getElementById('panda-img');
 
+        // Always show start GIF for steps 1 to 5
+        if (step < 6) {
+            pandaImg.src = gifs.start;
+        }
+
         if (step === 1) {
             questionText.innerText = "Will you be my girlfriend? 🥺❤️";
-            pandaImg.src = gifs.step1;
             actionArea.innerHTML = `
                 <div class="btn-row">
                     <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
@@ -47,7 +47,6 @@
             `;
         } else if (step === 2) {
             questionText.innerText = "Are you sure? I love you so much! 🥺";
-            pandaImg.src = gifs.step2;
             actionArea.innerHTML = `
                 <div class="btn-row">
                     <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
@@ -57,7 +56,6 @@
             `;
         } else if (step === 3) {
             questionText.innerText = "Please... let's write our beautiful story together 🌸";
-            pandaImg.src = gifs.step3;
             actionArea.innerHTML = `
                 <div class="btn-row">
                     <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
@@ -70,7 +68,6 @@
             `;
         } else if (step === 4) {
             questionText.innerText = "Don't give up! You have no other choice 🙃";
-            pandaImg.src = gifs.step4;
             actionArea.innerHTML = `
                 <div class="btn-row">
                     <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
@@ -84,7 +81,6 @@
             `;
         } else if (step === 5) {
             questionText.innerText = "System Hacked! Only YES is available now 😎✨";
-            pandaImg.src = gifs.step5;
             actionArea.innerHTML = `
                 <div class="btn-row">
                     <button class="btn-yes" onclick="nextStep(true)">Yes 💚</button>
@@ -98,7 +94,7 @@
             `;
         } else if (step === 6) {
             questionText.innerText = "Yessssss! 🎉";
-            pandaImg.src = gifs.step6;
+            pandaImg.src = gifs.success;
             actionArea.innerHTML = `
                 <p class="message-text">
                     You made the best decision ever! I promise to fill your life with love, laughter, and happiness.<br>
